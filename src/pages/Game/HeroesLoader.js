@@ -4,8 +4,8 @@ import HeroApi from '../../services/HeroApi';
 import GameSettings from '../../config/gameSettings';
 import shuffle from '../../util/shuffle';
 
-export const withGameLoader = Component => {
-  const WithGameLoader = props => {
+export const withHeroesLoader = Component => {
+  const WithHeroesLoader = props => {
     const [loading, setLoading] = useState(false);
     const [heroesList, setHeroesList] = useState([]);
 
@@ -60,7 +60,7 @@ export const withGameLoader = Component => {
       />
     );
   };
-  return WithGameLoader;
+  return WithHeroesLoader;
 };
 
-export default withGameLoader;
+export default withHeroesLoader;

@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 
 import Card from '../../components/Card';
 import { withGameLogic } from './GameLogic';
-import { withGameLoader } from './GameLoader';
+import { withHeroesLoader } from './HeroesLoader';
 import { withTimer } from './Timer';
+import compose from '../../util/compose';
 
 import { Container } from './styles';
 
@@ -43,4 +44,4 @@ Game.propTypes = {
   handleSelectName: PropTypes.func.isRequired,
 };
 
-export default withTimer(withGameLoader(withGameLogic(Game)));
+export default compose(withTimer, withHeroesLoader, withGameLogic)(Game);
