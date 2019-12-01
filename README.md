@@ -1,68 +1,56 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Master Heroes
 
-## Available Scripts
+This project was created as part of a internship selection process at [App Masters](https://appmasters.io/)
 
-In the project directory, you can run:
+It's a simple guess game using the [SuperHero API](https://github.com/akabab/superhero-api) where the player will test its knowledge of super heroes.
 
-### `yarn start`
+## Running the game
+To try the game simply open [this link](https://allanmaral.github.io/master-heroes/).
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Cloning this repository
+To clone this repo and play with the settings, open a terminal and run:
+```sh
+git clone https://github.com/allanmaral/master-heroes.git
+```
+Install the dependencies with:
+```sh
+yarn install
+```
+And run the game:
+```sh
+yarn start
+```
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+If you wish to change the settings, open the [gameSettings](src/config/gameSettings.js) file. It should contain some thing like this:
+```js
+export default {
+  numberOfCards: 15,
+  gameTime: 60,
+};
+```
 
-### `yarn test`
+```numberOfCards``` is the total number of heroes that is shown to the user before the and of game.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```gameTime``` is the time, in seconds, that the player have to answer all the guesses.
 
-### `yarn build`
+## Features
+The game loads every hero from the [API](https://github.com/akabab/superhero-api), shuffle the list and select a number of cards based on the variable ```numberOfCards``` from the file [gameSettings.js](src/config/gameSettings.js). Then, for each card, two random hero names are selected to build a question.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+When the fist hero is shown, a countdown starts with ```gameTime``` seconds (defined in [gameSettings.js](src/config/gameSettings.js)).
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+The game ends after the countdown ends or the player answers all the heroes. If the player finish the cards before running out of time, the remaining time in the timer is converted to points based in the percentage of right answers (answering fast isn't always the best option).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Technical details
+This project was implemented using React, a javascript library for building user interfaces.
 
-### `yarn eject`
+The following packages were used in this project:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+1. **axios**: Used to handle the async request to the [SuperHero API](https://github.com/akabab/superhero-api).
+2. **prop-types**: Used to document and validate the react components props usage.
+3. **react-icons**: Used for the icons in the game.
+4. **react-router**: Used to handle the navigation in the game.
+5. **styled-components**: Used to stylize all the components in the page.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The Navbar system was suboptimal, the original plan was to use Redux to handle all the states, but due to time restraints that could not be implemented.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+A global leaderboard with Node was also one of the goals, but as the Redux, could not be implemented in time.
