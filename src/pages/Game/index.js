@@ -23,7 +23,7 @@ function Game({
   return (
     <>
       <Navbar
-        title="Heroes Masters"
+        title="Masters Heroes"
         inGame
         cardIndex={cardIndex}
         totalCardNumber={totalCardNumber}

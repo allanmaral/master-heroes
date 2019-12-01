@@ -9,9 +9,9 @@ import GameSettings from '../../config/gameSettings';
 export default function Welcome() {
   return (
     <>
-      <Navbar title="Heroes Masters" />
+      <Navbar title="Masters Heroes" />
       <Container>
-        <h1>Welcome to Heroes Master</h1>
+        <h1>Welcome to Master Heroes</h1>
         <p>
           This is a simple guess game, for each image you have three name
           options, select the name of the hero in the image and score.
