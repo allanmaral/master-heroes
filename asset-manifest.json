@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.js": "/master-heroes/static/js/main.9678fa37.chunk.js",
+    "main.js.map": "/master-heroes/static/js/main.9678fa37.chunk.js.map",
+    "runtime-main.js": "/master-heroes/static/js/runtime-main.f10a2bc7.js",
+    "runtime-main.js.map": "/master-heroes/static/js/runtime-main.f10a2bc7.js.map",
+    "static/js/2.6e70f595.chunk.js": "/master-heroes/static/js/2.6e70f595.chunk.js",
+    "static/js/2.6e70f595.chunk.js.map": "/master-heroes/static/js/2.6e70f595.chunk.js.map",
+    "index.html": "/master-heroes/index.html",
+    "precache-manifest.ccbf30e15a44d4a8835a27ad64bcdf8d.js": "/master-heroes/precache-manifest.ccbf30e15a44d4a8835a27ad64bcdf8d.js",
+    "service-worker.js": "/master-heroes/service-worker.js"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f10a2bc7.js",
+    "static/js/2.6e70f595.chunk.js",
+    "static/js/main.9678fa37.chunk.js"
+  ]
+}
