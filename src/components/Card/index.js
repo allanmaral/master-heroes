@@ -1,24 +1,29 @@
 import React from 'react';
-
 import PropTypes from 'prop-types';
+
+import { Container, ButtonBox, Button, ImageBox } from './styles';
 
 function Card({ hero, handleSelectName }) {
   const { image, options } = hero;
   return (
-    <div>
-      <img src={image} alt="Hero" />
-      {options.map(opt => (
-        <button
-          key={opt}
-          type="button"
-          onClick={() => {
-            handleSelectName(opt);
-          }}
-        >
-          {opt}
-        </button>
-      ))}
-    </div>
+    <Container>
+      <ImageBox>
+        <img src={image} alt="Hero" />
+      </ImageBox>
+      <ButtonBox>
+        {options.map(opt => (
+          <Button
+            key={opt}
+            type="button"
+            onClick={() => {
+              handleSelectName(opt);
+            }}
+          >
+            {opt}
+          </Button>
+        ))}
+      </ButtonBox>
+    </Container>
   );
 }
 

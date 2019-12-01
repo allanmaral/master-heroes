@@ -7,7 +7,10 @@ export const withData = Component => {
   const WithData = props => {
     const location = useLocation();
     const { score, correctAnswers, timeRemaining } = location.state;
-    const totalScore = Number(score) + Number(timeRemaining);
+    const totalScore = Math.round(
+      Number(score) +
+        Number(timeRemaining) * (correctAnswers / GameSettings.numberOfCards)
+    );
 
     return (
       <Component

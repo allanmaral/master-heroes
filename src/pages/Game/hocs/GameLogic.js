@@ -16,7 +16,7 @@ export const withGameLogic = Component => {
       if (currentCard === GameSettings.numberOfCards || timeRemaining <= 0) {
         history.push('/results', { score, correctAnswers, timeRemaining });
       }
-    }, [currentCard, timeRemaining]);
+    }, [currentCard, timeRemaining, score, correctAnswers, history]);
 
     const handleSelectName = selectedName => {
       if (selectedName === heroesList[currentCard].name) {
@@ -34,6 +34,8 @@ export const withGameLogic = Component => {
           {...props}
           handleSelectName={handleSelectName}
           currentCard={heroesList[currentCard]}
+          cardIndex={currentCard + 1}
+          totalCardNumber={GameSettings.numberOfCards}
           score={score}
         />
       )

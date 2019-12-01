@@ -1,9 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { FaMedal, FaClock, FaUndo } from 'react-icons/fa';
+
+import Navbar from '../../components/Navbar';
 
 import { withData } from './hocs/Data';
-import { Container } from './styles';
+import { Container, ScoreContainer, Score, LinkButton } from './styles';
 import compose from '../../util/compose';
 
 function Results({
@@ -13,15 +15,37 @@ function Results({
   maximumNumberOfCards,
 }) {
   return (
-    <Container>
-      <h1>Results</h1>
-      <h2>{totalScore} Points</h2>
-      <h2>
-        You got {correctAnswers} out of {maximumNumberOfCards} heroes right.
-      </h2>
-      <h2>With {timeRemaining} seconds remaining.</h2>
-      <Link to="game">Restart Game!</Link>
-    </Container>
+    <>
+      <Navbar title="Results" />
+      <Container>
+        <h1>Congratulations!</h1>
+        <h2>
+          You got {correctAnswers} out of {maximumNumberOfCards} heroes right.
+        </h2>
+        <ScoreContainer>
+          <Score>
+            <FaMedal size={32} />
+            <div>
+              <span>{totalScore}</span>
+              <strong>Points</strong>
+            </div>
+          </Score>
+          <Score>
+            <FaClock size={32} />
+            <div>
+              <span>
+                {timeRemaining} <strong>s</strong>
+              </span>
+              <strong>Remaining</strong>
+            </div>
+          </Score>
+        </ScoreContainer>
+        <LinkButton to="game">
+          <FaUndo size={20} />
+          Restart Game!
+        </LinkButton>
+      </Container>
+    </>
   );
 }
 

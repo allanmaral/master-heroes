@@ -2,12 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Card from '../../components/Card';
+import Navbar from '../../components/Navbar';
+
 import { withGameLogic } from './hocs/GameLogic';
 import { withHeroesLoader } from './hocs/HeroesLoader';
 import { withTimer } from './hocs/Timer';
 import compose from '../../util/compose';
 
-import { Container } from './styles';
+import { Container, LoadingScreen } from './styles';
 
 function Game({
   loading,
@@ -15,21 +17,30 @@ function Game({
   score,
   currentCard,
   handleSelectName,
+  cardIndex,
+  totalCardNumber,
 }) {
   return (
-    <Container>
-      <h1>Game</h1>
-      <h1>Score: {score}</h1>
-      <h1>Time Remaining: {timeRemaining}</h1>
-      {loading && (
-        <div>
-          <h1>Loading...</h1>
-        </div>
-      )}
-      {!loading && (
-        <Card hero={currentCard} handleSelectName={handleSelectName} />
-      )}
-    </Container>
+    <>
+      <Navbar
+        title="Heroes Masters"
+        inGame
+        cardIndex={cardIndex}
+        totalCardNumber={totalCardNumber}
+        score={score}
+        timeRemaining={timeRemaining}
+      />
+      <Container>
+        {loading && (
+          <LoadingScreen>
+            <h1>Loading...</h1>
+          </LoadingScreen>
+        )}
+        {!loading && (
+          <Card hero={currentCard} handleSelectName={handleSelectName} />
+        )}
+      </Container>
+    </>
   );
 }
 
@@ -42,6 +53,8 @@ Game.propTypes = {
   timeRemaining: PropTypes.number.isRequired,
   score: PropTypes.number.isRequired,
   handleSelectName: PropTypes.func.isRequired,
+  cardIndex: PropTypes.number.isRequired,
+  totalCardNumber: PropTypes.number.isRequired,
 };
 
 export default compose(withTimer, withHeroesLoader, withGameLogic)(Game);
