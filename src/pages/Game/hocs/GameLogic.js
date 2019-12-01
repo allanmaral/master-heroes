@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router';
 import PropTypes from 'prop-types';
 
-import GameSettings from '../../config/gameSettings';
+import GameSettings from '../../../config/gameSettings';
 
 export const withGameLogic = Component => {
   const WithGameLogic = props => {

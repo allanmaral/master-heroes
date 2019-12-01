@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import GameSettings from '../../config/gameSettings';
+import GameSettings from '../../../config/gameSettings';
 
 export const withTimer = Component => {
   const WithTimer = props => {

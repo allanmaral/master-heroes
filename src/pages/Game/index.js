@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Card from '../../components/Card';
-import { withGameLogic } from './GameLogic';
-import { withHeroesLoader } from './HeroesLoader';
-import { withTimer } from './Timer';
+import { withGameLogic } from './hocs/GameLogic';
+import { withHeroesLoader } from './hocs/HeroesLoader';
+import { withTimer } from './hocs/Timer';
 import compose from '../../util/compose';
 
 import { Container } from './styles';

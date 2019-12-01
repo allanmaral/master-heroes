@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
-import HeroApi from '../../services/HeroApi';
-import GameSettings from '../../config/gameSettings';
-import shuffle from '../../util/shuffle';
+import HeroApi from '../../../services/HeroApi';
+import GameSettings from '../../../config/gameSettings';
+import shuffle from '../../../util/shuffle';
 
 export const withHeroesLoader = Component => {
   const WithHeroesLoader = props => {
