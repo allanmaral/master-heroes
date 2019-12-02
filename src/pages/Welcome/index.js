@@ -19,9 +19,9 @@ export default function Welcome() {
         <p>
           You have {GameSettings.gameTime} seconds to guess the name of{' '}
           {GameSettings.numberOfCards} heroes, after answering all the heros,
-          the remaining time will be converted in points
+          the remaining time will be converted in points.
         </p>
-        <p>Can you guess al the heroes?</p>
+        <p>Can you guess all the heroes?</p>
         <LinkButton to="game">
           <FaPlay size={20} />
           Start Game!
