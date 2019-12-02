@@ -19,6 +19,7 @@ function Game({
   handleSelectName,
   cardIndex,
   totalCardNumber,
+  selectedCard,
 }) {
   return (
     <>
@@ -37,7 +38,12 @@ function Game({
           </LoadingScreen>
         )}
         {!loading && (
-          <Card hero={currentCard} handleSelectName={handleSelectName} />
+          <Card
+            hero={currentCard}
+            handleSelectName={handleSelectName}
+            selectedCard={selectedCard}
+            rightAnwser={currentCard.name}
+          />
         )}
       </Container>
     </>
@@ -55,6 +61,7 @@ Game.propTypes = {
   handleSelectName: PropTypes.func.isRequired,
   cardIndex: PropTypes.number.isRequired,
   totalCardNumber: PropTypes.number.isRequired,
+  selectedCard: PropTypes.string.isRequired,
 };
 
 export default compose(withTimer, withHeroesLoader, withGameLogic)(Game);

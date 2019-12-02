@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import chroma from 'chroma-js';
 
 export const Container = styled.div`
   width: 100%;
@@ -41,7 +42,7 @@ export const Button = styled.button`
   width: 100%;
   max-width: 300px;
   height: 100px;
-  background: #2f6dae;
+  background: ${props => props.color};
   color: #fff;
   font-size: 24px;
   font-weight: bold;
@@ -50,7 +51,7 @@ export const Button = styled.button`
   box-shadow: 0px 0px 13px 0px rgba(22, 22, 30, 1);
 
   &:hover {
-    background: #2c9ca6;
+    background: ${props => chroma(props.color).brighten(0.5)};
   }
 `;
 

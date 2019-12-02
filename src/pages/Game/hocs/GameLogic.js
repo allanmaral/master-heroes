@@ -10,6 +10,7 @@ export const withGameLogic = Component => {
     const [currentCard, setCurrentCard] = useState(0);
     const [score, setScore] = useState(0);
     const [correctAnswers, setCorrectAnswers] = useState(0);
+    const [selectedCard, setSelectedCard] = useState('');
     const history = useHistory();
 
     useEffect(() => {
@@ -23,7 +24,11 @@ export const withGameLogic = Component => {
         setScore(score + 20);
         setCorrectAnswers(correctAnswers + 1);
       }
-      setCurrentCard(currentCard + 1);
+      setSelectedCard(selectedName);
+      setTimeout(() => {
+        setCurrentCard(currentCard + 1);
+        setSelectedCard('');
+      }, 1500);
     };
 
     return (
@@ -36,6 +41,7 @@ export const withGameLogic = Component => {
           currentCard={heroesList[currentCard]}
           cardIndex={currentCard + 1}
           totalCardNumber={GameSettings.numberOfCards}
+          selectedCard={selectedCard}
           score={score}
         />
       )
