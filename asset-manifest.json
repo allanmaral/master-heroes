@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.js": "/master-heroes/static/js/main.67c694e8.chunk.js",
-    "main.js.map": "/master-heroes/static/js/main.67c694e8.chunk.js.map",
+    "main.js": "/master-heroes/static/js/main.95f3b655.chunk.js",
+    "main.js.map": "/master-heroes/static/js/main.95f3b655.chunk.js.map",
     "runtime-main.js": "/master-heroes/static/js/runtime-main.f10a2bc7.js",
     "runtime-main.js.map": "/master-heroes/static/js/runtime-main.f10a2bc7.js.map",
     "static/js/2.6e70f595.chunk.js": "/master-heroes/static/js/2.6e70f595.chunk.js",
     "static/js/2.6e70f595.chunk.js.map": "/master-heroes/static/js/2.6e70f595.chunk.js.map",
     "index.html": "/master-heroes/index.html",
-    "precache-manifest.e146e4a0154586bdfdb6c9d5696baf65.js": "/master-heroes/precache-manifest.e146e4a0154586bdfdb6c9d5696baf65.js",
+    "precache-manifest.b2ed5d3818c2037fde21fdbf179f5ad3.js": "/master-heroes/precache-manifest.b2ed5d3818c2037fde21fdbf179f5ad3.js",
     "service-worker.js": "/master-heroes/service-worker.js"
   },
   "entrypoints": [
     "static/js/runtime-main.f10a2bc7.js",
     "static/js/2.6e70f595.chunk.js",
-    "static/js/main.67c694e8.chunk.js"
+    "static/js/main.95f3b655.chunk.js"
   ]
 }
