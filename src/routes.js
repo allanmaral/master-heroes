@@ -8,7 +8,7 @@ import Results from './pages/Results';
 
 function Routes() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Switch>
         <Route path="/" exact component={Welcome} />
         <Route path="/game" component={Game} />

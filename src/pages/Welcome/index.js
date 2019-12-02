@@ -9,7 +9,7 @@ import GameSettings from '../../config/gameSettings';
 export default function Welcome() {
   return (
     <>
-      <Navbar title="Masters Heroes" />
+      <Navbar title="Master Heroes" />
       <Container>
         <h1>Welcome to Master Heroes</h1>
         <p>
