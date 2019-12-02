@@ -53,4 +53,4 @@ The following packages were used in this project:
 
 The Navbar system was suboptimal, the original plan was to use Redux to handle all the states, but due to time restraints that could not be implemented.
 
-A global leaderboard with Node was also one of the goals, but as the Redux, could not be implemented in time.
+Building a global leaderboard with Node was also one of the goals, but as the Navbar solution with Redux, could not be implemented in time.
