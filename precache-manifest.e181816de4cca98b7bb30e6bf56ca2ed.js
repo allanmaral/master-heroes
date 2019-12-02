@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6d0dec2fd84f929495a0217654c5814a",
+    "revision": "9c90d6e63243ab7d77f1d57da4290fe2",
     "url": "/master-heroes/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/master-heroes/static/js/2.6e70f595.chunk.js"
   },
   {
-    "revision": "08ac5b12a3f875e23d1e",
-    "url": "/master-heroes/static/js/main.95f3b655.chunk.js"
+    "revision": "a4ed8822f34a25ec9848",
+    "url": "/master-heroes/static/js/main.10438dad.chunk.js"
   },
   {
     "revision": "22da0072cc8393dccbed",
