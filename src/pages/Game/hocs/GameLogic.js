@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 
 import GameSettings from '../../../config/gameSettings';
 
-export const withGameLogic = Component => {
-  const WithGameLogic = props => {
+export const withGameLogic = (Component) => {
+  const WithGameLogic = (props) => {
     const { timeRemaining, heroesList } = props;
     const [currentCard, setCurrentCard] = useState(0);
     const [score, setScore] = useState(0);
@@ -19,7 +19,7 @@ export const withGameLogic = Component => {
       }
     }, [currentCard, timeRemaining, score, correctAnswers, history]);
 
-    const handleSelectName = selectedName => {
+    const handleSelectName = (selectedName) => {
       if (selectedName === heroesList[currentCard].name) {
         setScore(score + 20);
         setCorrectAnswers(correctAnswers + 1);
@@ -52,7 +52,7 @@ export const withGameLogic = Component => {
     heroesList: PropTypes.arrayOf(
       PropTypes.shape({
         name: PropTypes.string.isRequired,
-        options: PropTypes.array.isRequired,
+        options: PropTypes.arrayOf(PropTypes.string).isRequired,
       })
     ).isRequired,
     timeRemaining: PropTypes.number.isRequired,

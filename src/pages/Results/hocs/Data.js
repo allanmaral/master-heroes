@@ -3,8 +3,8 @@ import { useLocation } from 'react-router';
 
 import GameSettings from '../../../config/gameSettings';
 
-export const withData = Component => {
-  const WithData = props => {
+export const withData = (Component) => {
+  const WithData = (props) => {
     const location = useLocation();
     const { score, correctAnswers, timeRemaining } = location.state;
     const totalScore = Math.round(

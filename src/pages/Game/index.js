@@ -54,7 +54,7 @@ Game.propTypes = {
   loading: PropTypes.bool.isRequired,
   currentCard: PropTypes.shape({
     name: PropTypes.string.isRequired,
-    options: PropTypes.array.isRequired,
+    options: PropTypes.arrayOf(PropTypes.string).isRequired,
   }).isRequired,
   timeRemaining: PropTypes.number.isRequired,
   score: PropTypes.number.isRequired,
