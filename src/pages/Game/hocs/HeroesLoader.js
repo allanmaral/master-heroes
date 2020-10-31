@@ -4,12 +4,12 @@ import HeroApi from '../../../services/HeroApi';
 import GameSettings from '../../../config/gameSettings';
 import shuffle from '../../../util/shuffle';
 
-export const withHeroesLoader = Component => {
-  const WithHeroesLoader = props => {
+export const withHeroesLoader = (Component) => {
+  const WithHeroesLoader = (props) => {
     const [loading, setLoading] = useState(false);
     const [heroesList, setHeroesList] = useState([]);
 
-    const generateCardsFromHeroes = heroes => {
+    const generateCardsFromHeroes = (heroes) => {
       // Get a name deferent from the hero with id 'id'
       const getDiferentName = (index, id) => {
         while (heroes[index].id === id) {
@@ -45,6 +45,7 @@ export const withHeroesLoader = Component => {
         } catch (err) {
           setLoading(false);
           setHeroesList([]);
+          // eslint-disable-next-line no-console
           console.error(err);
         }
       };

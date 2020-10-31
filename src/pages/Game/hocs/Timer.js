@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 
 import GameSettings from '../../../config/gameSettings';
 
-export const withTimer = Component => {
-  const WithTimer = props => {
+export const withTimer = (Component) => {
+  const WithTimer = (props) => {
     const [timeRemaining, setTimeRemaining] = useState(GameSettings.gameTime);
 
     useEffect(() => {

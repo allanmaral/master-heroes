@@ -6,7 +6,7 @@ import { Container, ButtonBox, Button, ImageBox } from './styles';
 function Card({ hero, handleSelectName, selectedCard, rightAnwser }) {
   const { image, options } = hero;
 
-  const getButtonColor = buttonName => {
+  const getButtonColor = (buttonName) => {
     if (selectedCard) {
       if (buttonName === rightAnwser) {
         return '#2fea56';
@@ -24,7 +24,7 @@ function Card({ hero, handleSelectName, selectedCard, rightAnwser }) {
         <img src={image} alt="Hero" />
       </ImageBox>
       <ButtonBox>
-        {options.map(opt => (
+        {options.map((opt) => (
           <Button
             key={opt}
             type="button"
@@ -45,7 +45,7 @@ function Card({ hero, handleSelectName, selectedCard, rightAnwser }) {
 Card.propTypes = {
   hero: PropTypes.shape({
     image: PropTypes.string.isRequired,
-    options: PropTypes.array.isRequired,
+    options: PropTypes.arrayOf(PropTypes.string).isRequired,
   }).isRequired,
   handleSelectName: PropTypes.func.isRequired,
   selectedCard: PropTypes.string.isRequired,

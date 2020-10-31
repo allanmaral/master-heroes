@@ -42,7 +42,7 @@ export const Button = styled.button`
   width: 100%;
   max-width: 300px;
   height: 100px;
-  background: ${props => props.color};
+  background: ${(props) => props.color};
   color: #fff;
   font-size: 24px;
   font-weight: bold;
@@ -51,7 +51,7 @@ export const Button = styled.button`
   box-shadow: 0px 0px 13px 0px rgba(22, 22, 30, 1);
 
   &:hover {
-    background: ${props => chroma(props.color).brighten(0.5)};
+    background: ${(props) => chroma(props.color).brighten(0.5)};
   }
 `;
 
